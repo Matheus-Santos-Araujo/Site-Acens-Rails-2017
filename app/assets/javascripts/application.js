@@ -10,6 +10,18 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require jquery-1.11.1.min
+//= require bootstrap.min
+//= require owl.carousel.min
+//= require jquery.stellar.min
+//= require wow.min
+//= require classie
+//= require jquery.easing.min
+//= require waypoints.min
+//= require jquery.counterup.min
+//= require typed
+//= require smoothscroll
 //= require rails-ujs
 //= require turbolinks
+//= require ckeditor/init
 //= require_tree .
