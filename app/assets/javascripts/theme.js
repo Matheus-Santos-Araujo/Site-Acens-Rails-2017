@@ -17,6 +17,7 @@ $('.page-scroll').bind('click', function(event) {
 ////////////////////////////////////////////////////////////////////////
 
 var cbpAnimatedHeader = (function() {
+    var path_page = window.location.pathname;
 
     var docElem = document.documentElement,
         header = document.querySelector( '.navbar-fixed-top' ),
@@ -34,7 +35,9 @@ var cbpAnimatedHeader = (function() {
 
     function scrollPage() {
         var sy = scrollY();
-        if ( sy >= changeHeaderOn ) {
+        if(path_page != '/') {
+          classie.add(header, 'navbar-shrink');
+        } else if ( sy >= changeHeaderOn ) {
             classie.add( header, 'navbar-shrink' );
         }
         else {
