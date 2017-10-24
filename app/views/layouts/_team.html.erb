@@ -21,72 +21,71 @@
   <div class="team">
     <div class="container">
       <div class="row">
-
-        <div class="team-box col-xs-6 col-md-3 wow flipInY" data-wow-delay="0.5s">
-          <div class="thumbnail text-center">
-            <div class="team-image">
-              <a href="#" data-toggle="modal" data-target="#teamModal-1">
-                <img src="img/team/staff-1.jpg" alt="John Doe">
-                <div class="cover">
-                  <div class="cover-inner"></div>
-                </div>
-              </a>
-            </div>
-            <div class="caption">
-              <h5>John Doe</h5>
-              <p class="text-gray">General Manager</p>
+        <% @users.each do |user| %>
+          <div class="team-box col-xs-6 col-md-3 wow flipInY" data-wow-delay="0.5s">
+            <div class="thumbnail text-center">
+              <div class="team-image">
+                <a href="#" data-toggle="modal" data-target="#teamModal-1">
+                  <%= image_tag user.picture.url(:medium), alt: user.name %>
+                  <!-- <img src="img/team/staff-1.jpg" alt="John Doe"> -->
+                  <div class="cover">
+                    <div class="cover-inner"></div>
+                  </div>
+                </a>
+              </div>
+              <div class="caption">
+                <h5><%= user.name %></h5>
+                <p class="text-gray"><%= user.position_held %></p>
+              </div>
             </div>
           </div>
-        </div>
 
-        <!-- Begin team modal-1 (John Doe) -->
-        <div class="modal fade" id="teamModal-1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel-1" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content text-white">
-              <div class="close" data-dismiss="modal">
-                <div class="lr">
-                  <div class="rl"></div>
+          <!-- Begin team modal-1 (John Doe) -->
+          <div class="modal fade" id="teamModal-1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel-1" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content text-white">
+                <div class="close" data-dismiss="modal">
+                  <div class="lr">
+                    <div class="rl"></div>
+                  </div>
                 </div>
-              </div>
-              <div class="container">
-                <div class="modal-body">
-                  <div class="row">
-                    <div class="col-md-7">
-                      <div class="modal-image">
-                        <div class="cover">
-                          <div class="cover-inner"></div>
+                <div class="container">
+                  <div class="modal-body">
+                    <div class="row">
+                      <div class="col-md-7">
+                        <div class="modal-image">
+                          <div class="cover">
+                            <div class="cover-inner"></div>
+                          </div>
+                          <%= image_tag user.picture.url, alt: user.name %>
+                          <!-- <img src="img/team/staff-1.jpg" alt="John Doe"> -->
                         </div>
-                        <img src="img/team/staff-1.jpg" alt="John Doe">
                       </div>
-                    </div>
-                    <div class="col-md-5">
-                      <div class="modal-header">
-                        <h2 class="modal-title" id="myModalLabel-1">John Doe</h2>
-                        <p class="text-gray">General Manager</p>
-                        <div class="divider divider-sm divider-white divider-left"></div>
-                      </div>
-                      <div class="modal-text">
-                        <p>
-                          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-                          dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                        </p>
-                        <p>
-                          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.
-                        </p>
-                      </div>
-                      <div class="modal-details">
-                        <a href="mailto:info@demo.com" target="_blank">
-                          <i class="fa fa-envelope fa-lg"></i>
-                        </a>
-                        <a href="https://www.facebook.com" target="_blank">
-                          <i class="fa fa-facebook fa-lg"></i>
-                        </a>
-                        <a href="https://twitter.com" target="_blank">
-                          <i class="fa fa-twitter fa-lg"></i>
-                        </a>
-                        <a href="https://www.linkedin.com" target="_blank">
-                          <i class="fa fa-linkedin fa-lg"></i>
-                        </a>
+                      <div class="col-md-5">
+                        <div class="modal-header">
+                          <h2 class="modal-title" id="myModalLabel-1"><%= user.name %></h2>
+                          <p class="text-gray"><%= user.position_held %></p>
+                          <div class="divider divider-sm divider-white divider-left"></div>
+                        </div>
+                        <div class="modal-text">
+                          <p>
+                            <%= user.description %>
+                          </p>
+                        </div>
+                        <div class="modal-details">
+                          <a href="mailto:info@demo.com" target="_blank">
+                            <i class="fa fa-envelope fa-lg"></i>
+                          </a>
+                          <a href="https://www.facebook.com" target="_blank">
+                            <i class="fa fa-facebook fa-lg"></i>
+                          </a>
+                          <a href="https://twitter.com" target="_blank">
+                            <i class="fa fa-twitter fa-lg"></i>
+                          </a>
+                          <a href="https://www.linkedin.com" target="_blank">
+                            <i class="fa fa-linkedin fa-lg"></i>
+                          </a>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -94,233 +93,8 @@
               </div>
             </div>
           </div>
-        </div>
-        <!-- End team modal-1 -->
-
-        <div class="team-box col-xs-6 col-md-3 wow flipInY" data-wow-delay="0.7s">
-          <div class="thumbnail text-center">
-            <div class="team-image">
-              <a href="#" data-toggle="modal" data-target="#teamModal-2">
-                <img src="img/team/staff-2.jpg" alt="Martin Vegas">
-                <div class="cover">
-                  <div class="cover-inner"></div>
-                </div>
-              </a>
-            </div>
-            <div class="caption">
-              <h5>Martin Vegas</h5>
-              <p class="text-gray">Developer</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Begin team modal-2 (Martin Vegas) -->
-        <div class="modal fade" id="teamModal-2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel-2" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content text-white">
-              <div class="close" data-dismiss="modal">
-                <div class="lr">
-                  <div class="rl"></div>
-                </div>
-              </div>
-              <div class="container">
-                <div class="modal-body">
-                  <div class="row">
-                    <div class="col-md-7">
-                      <div class="modal-image">
-                        <div class="cover">
-                          <div class="cover-inner"></div>
-                        </div>
-                        <img src="img/team/staff-2.jpg" alt="Martin Vegas">
-                      </div>
-                    </div>
-                    <div class="col-md-5">
-                      <div class="modal-header">
-                        <h2 class="modal-title" id="myModalLabel-2">Martin Vegas</h2>
-                        <p class="text-gray">Developer</p>
-                        <div class="divider divider-sm divider-white divider-left"></div>
-                      </div>
-                      <div class="modal-text">
-                        <p>
-                          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-                          dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                        </p>
-                        <p>
-                          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.
-                        </p>
-                      </div>
-                      <div class="modal-details">
-                        <a href="mailto:info@demo.com" target="_blank">
-                          <i class="fa fa-envelope fa-lg"></i>
-                        </a>
-                        <a href="https://www.facebook.com" target="_blank">
-                          <i class="fa fa-facebook fa-lg"></i>
-                        </a>
-                        <a href="https://twitter.com" target="_blank">
-                          <i class="fa fa-twitter fa-lg"></i>
-                        </a>
-                        <a href="https://www.linkedin.com" target="_blank">
-                          <i class="fa fa-linkedin fa-lg"></i>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- End team modal-2 -->
-
-        <div class="team-box col-xs-6 col-md-3 wow flipInY" data-wow-delay="0.9s">
-          <div class="thumbnail text-center">
-            <div class="team-image">
-              <a href="#" data-toggle="modal" data-target="#teamModal-3">
-                <img src="img/team/staff-3.jpg" alt="Joseph Reeves">
-                <div class="cover">
-                  <div class="cover-inner"></div>
-                </div>
-              </a>
-            </div>
-            <div class="caption">
-              <h5>Joseph Reeves</h5>
-              <p class="text-gray">Designer</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Begin team modal-3 (Joseph Reeves) -->
-        <div class="modal fade" id="teamModal-3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel-3" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content text-white">
-              <div class="close" data-dismiss="modal">
-                <div class="lr">
-                  <div class="rl"></div>
-                </div>
-              </div>
-              <div class="container">
-                <div class="modal-body">
-                  <div class="row">
-                    <div class="col-md-7">
-                      <div class="modal-image">
-                        <div class="cover">
-                          <div class="cover-inner"></div>
-                        </div>
-                        <img src="img/team/staff-3.jpg" alt="Joseph Reeves">
-                      </div>
-                    </div>
-                    <div class="col-md-5">
-                      <div class="modal-header">
-                        <h2 class="modal-title" id="myModalLabel-3">Joseph Reeves</h2>
-                        <p class="text-gray">Designer</p>
-                        <div class="divider divider-sm divider-white divider-left"></div>
-                      </div>
-                      <div class="modal-text">
-                        <p>
-                          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-                          dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                        </p>
-                        <p>
-                          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.
-                        </p>
-                      </div>
-                      <div class="modal-details">
-                        <a href="mailto:info@demo.com" target="_blank">
-                          <i class="fa fa-envelope fa-lg"></i>
-                        </a>
-                        <a href="https://www.facebook.com" target="_blank">
-                          <i class="fa fa-facebook fa-lg"></i>
-                        </a>
-                        <a href="https://twitter.com" target="_blank">
-                          <i class="fa fa-twitter fa-lg"></i>
-                        </a>
-                        <a href="https://www.linkedin.com" target="_blank">
-                          <i class="fa fa-linkedin fa-lg"></i>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- End team modal-3 -->
-
-        <div class="team-box col-xs-6 col-md-3 wow flipInY" data-wow-delay="1s">
-          <div class="thumbnail text-center">
-            <div class="team-image">
-              <a href="#" data-toggle="modal" data-target="#teamModal-4">
-                <img src="img/team/staff-4.jpg" alt="Henry Harrison">
-                <div class="cover">
-                  <div class="cover-inner"></div>
-                </div>
-              </a>
-            </div>
-            <div class="caption">
-              <h5>Henry Harrison</h5>
-              <p class="text-gray">Designer</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Begin team modal-4 (Henry Harrison) -->
-        <div class="modal fade" id="teamModal-4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel-4" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content text-white">
-              <div class="close" data-dismiss="modal">
-                <div class="lr">
-                  <div class="rl"></div>
-                </div>
-              </div>
-              <div class="container">
-                <div class="modal-body">
-                  <div class="row">
-                    <div class="col-md-7">
-                      <div class="modal-image">
-                        <div class="cover">
-                          <div class="cover-inner"></div>
-                        </div>
-                        <img src="img/team/staff-4.jpg" alt="Henry Harrison">
-                      </div>
-                    </div>
-                    <div class="col-md-5">
-                      <div class="modal-header">
-                        <h2 class="modal-title" id="myModalLabel-4">Henry Harrison</h2>
-                        <p class="text-gray">Designer</p>
-                        <div class="divider divider-sm divider-white divider-left"></div>
-                      </div>
-                      <div class="modal-text">
-                        <p>
-                          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-                          dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                        </p>
-                        <p>
-                          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.
-                        </p>
-                      </div>
-                      <div class="modal-details">
-                        <a href="mailto:info@demo.com" target="_blank">
-                          <i class="fa fa-envelope fa-lg"></i>
-                        </a>
-                        <a href="https://www.facebook.com" target="_blank">
-                          <i class="fa fa-facebook fa-lg"></i>
-                        </a>
-                        <a href="https://twitter.com" target="_blank">
-                          <i class="fa fa-twitter fa-lg"></i>
-                        </a>
-                        <a href="https://www.linkedin.com" target="_blank">
-                          <i class="fa fa-linkedin fa-lg"></i>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- End team modal-4 -->
+          <!-- End team modal-1 -->
+        <% end %>
 
       </div>
       <!-- /.row -->

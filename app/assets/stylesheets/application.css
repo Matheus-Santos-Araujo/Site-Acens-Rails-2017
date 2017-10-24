@@ -22,3 +22,30 @@
  *= require_tree .
  *= require_self
  */
+
+ #map {
+   width: 100%;
+   height: 500px;
+ }
+
+/* Redes Sociais */
+  .social {
+    display: table;
+    width: 100%;
+    text-align: center;
+  }
+
+  .social-media {
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+  footer ul li {
+    display: inline-block;
+  }
+
+  footer ul {
+    margin-bottom: 0;
+    padding: 0;
+    list-style: none;
+  }
