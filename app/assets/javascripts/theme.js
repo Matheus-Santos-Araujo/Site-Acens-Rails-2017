@@ -23,7 +23,9 @@ var cbpAnimatedHeader = (function() {
         header = document.querySelector( '.navbar-fixed-top' ),
         didScroll = false,
         changeHeaderOn = 10;
-
+        if(path_page != '/' && path_page != '/404') {
+          classie.add(header, 'navbar-shrink');
+        }
     function init() {
         window.addEventListener( 'scroll', function( event ) {
             if( !didScroll ) {
@@ -35,7 +37,7 @@ var cbpAnimatedHeader = (function() {
 
     function scrollPage() {
         var sy = scrollY();
-        if(path_page != '/') {
+        if(path_page != '/' && path_page != '/404') {
           classie.add(header, 'navbar-shrink');
         } else if ( sy >= changeHeaderOn ) {
             classie.add( header, 'navbar-shrink' );

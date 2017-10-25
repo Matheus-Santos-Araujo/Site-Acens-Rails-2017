@@ -7,10 +7,10 @@
 
       <div id="owl-intro-text" class="owl-carousel">
         <div class="item">
-          <h1>Aberto processo seletivo 2017.2</h1>
-          <h3>Já está rolando o período de inscrições, não perca tempo!</h3>
+          <h1><%= @articles.last.title %></h1>
+          <h3><%= @articles.last.subtitle %></h3>
           <div class="more-space-m"></div>
-          <a class="btn btn-main btn-lg page-scroll" href="processo-seletivo-2017-2.html" role="button">Começar!</a>
+          <%= link_to "Ver mais", article_path(@articles.last), class: "btn btn-main btn-lg page-scroll", role:"button" %>
         </div>
         <div class="item">
           <h1>Acens</h1>
