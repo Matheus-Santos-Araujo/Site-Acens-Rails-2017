@@ -4,7 +4,7 @@
     <div class="caption text-center text-white" data-stellar-ratio="0.7">
 
       <div id="owl-intro-text" class="owl-carousel">
-        <% if !@articles.blank? %>
+        <% unless @articles.blank? %>
         <div class="item">
           <h1><%= @articles.last.title %></h1>
           <h3><%= @articles.last.subtitle %></h3>

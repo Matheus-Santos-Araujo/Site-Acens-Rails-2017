@@ -1,0 +1,33 @@
+<div class="page">
+  <div class="more-space-xl"></div>
+  <div class="container">
+  	<h2 class="text-center">Notícias</h2>
+    <div class="more-space-xl"></div>
+
+    <div id="owl-blog" class="owl-carousel owl-blog">
+      <% unless @articles.blank? %>
+        <% @articles.order('id desc').each do |article| %>
+          <div class="blog-box wow zoomIn" data-wow-delay="0.5s">
+            <div class="thumbnail">
+              <div class="blog-image">
+                <%= link_to article_path(article) do %>
+                  <%= image_tag article.photo.url(:medium), alt: article.title %>
+                  <div class="cover"><div class="cover-inner"></div></div>
+                <% end %>
+
+              </div>
+              <div class="caption text-center">
+                <div class="caption-tag"><i class="fa fa-pencil"></i></div>
+                <a class="title" href="processo-seletivo-2017-2.html"><h5><%= article.title %></h5></a>
+                <p>By <span><a href="#"><%= article.user.name %></a></span></p>
+                <p><%= article.subtitle %></p>
+                <%= link_to "Leia mais!", article_path(article) %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+    <!-- /.owl-carousel -->
+  </div>
+</div>

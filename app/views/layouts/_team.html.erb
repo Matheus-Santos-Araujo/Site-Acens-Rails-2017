@@ -21,7 +21,7 @@
   <div class="team">
     <div class="container">
       <div class="row">
-        <% if !@users.blank? %>
+        <% unless @users.blank? %>
           <% @users.each do |user| %>
           <div class="team-box col-xs-6 col-md-3 wow flipInY" data-wow-delay="0.5s">
             <div class="thumbnail text-center">

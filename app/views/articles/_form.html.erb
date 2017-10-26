@@ -3,6 +3,13 @@
 <div class="container">
 	<h2>Nova notícia</h2>
 
+  <% @article.errors.full_messages.each do |message| %>
+    <div class="alert alert-danger fade in alert-dismissable">
+      <a href="#" class="close" data-dismiss="alert" aria-label="close" title="close">&times;</a>
+      <%=message%>
+    </div>
+  <% end %>
+
 	<div class="row">
 		<%= form_for @article do |f| %>
 			<div class="form-group col-sm-11 col-md-12">

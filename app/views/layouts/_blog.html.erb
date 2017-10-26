@@ -15,7 +15,7 @@
   <!-- End page header-->
   <div class="container-fluid">
     <div id="owl-blog" class="owl-carousel owl-blog">
-      <% if !@articles.blank? %>
+      <% unless @articles.blank? %>
         <% @articles.order('id desc').each do |article| %>
           <div class="blog-box wow zoomIn" data-wow-delay="0.5s">
             <div class="thumbnail">
@@ -24,14 +24,12 @@
                   <%= image_tag article.photo.url(:medium), alt: article.title %>
                   <div class="cover"><div class="cover-inner"></div></div>
                 <% end %>
-                <!-- <a href="processo-seletivo-2017-2.html">
-                    <img src="img/blog/ProcessoSeletivoabertura2017.png" alt="Processo seletivo Acens 2017.2">
-                    <div class="cover"><div class="cover-inner"></div></div>
-                  </a> -->
               </div>
               <div class="caption text-center">
                 <div class="caption-tag"><i class="fa fa-pencil"></i></div>
-                <a class="title" href="processo-seletivo-2017-2.html"><h5><%= article.title %></h5></a>
+                <%= link_to article_path(article), class: "title" do %>
+                  <h5><%= article.title %></h5>
+                <% end %>
                 <p>By <span><a href="#"><%= article.user.name %></a></span></p>
                 <p><%= article.subtitle %></p>
                 <%= link_to "Leia mais!", article_path(article) %>
