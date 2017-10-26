@@ -32,6 +32,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'paperclip'
 gem 'ckeditor'
 gem 'devise'
+gem 'haml'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

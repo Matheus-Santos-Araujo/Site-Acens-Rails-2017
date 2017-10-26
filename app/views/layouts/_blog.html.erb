@@ -15,28 +15,30 @@
   <!-- End page header-->
   <div class="container-fluid">
     <div id="owl-blog" class="owl-carousel owl-blog">
-      <% @articles.order('id desc').each do |article| %>
-        <div class="blog-box wow zoomIn" data-wow-delay="0.5s">
-          <div class="thumbnail">
-            <div class="blog-image">
-              <%= link_to article_path(article) do %>
-                <%= image_tag article.photo.url(:medium), alt: article.title %>
-                <div class="cover"><div class="cover-inner"></div></div>
-              <% end %>
-              <!-- <a href="processo-seletivo-2017-2.html">
-                  <img src="img/blog/ProcessoSeletivoabertura2017.png" alt="Processo seletivo Acens 2017.2">
+      <% if !@articles.blank? %>
+        <% @articles.order('id desc').each do |article| %>
+          <div class="blog-box wow zoomIn" data-wow-delay="0.5s">
+            <div class="thumbnail">
+              <div class="blog-image">
+                <%= link_to article_path(article) do %>
+                  <%= image_tag article.photo.url(:medium), alt: article.title %>
                   <div class="cover"><div class="cover-inner"></div></div>
-                </a> -->
-            </div>
-            <div class="caption text-center">
-              <div class="caption-tag"><i class="fa fa-pencil"></i></div>
-              <a class="title" href="processo-seletivo-2017-2.html"><h5><%= article.title %></h5></a>
-              <p>By <span><a href="#"><%= article.user.name %></a></span></p>
-              <p><%= article.subtitle %></p>
-              <%= link_to "Leia mais!", article_path(article) %>
+                <% end %>
+                <!-- <a href="processo-seletivo-2017-2.html">
+                    <img src="img/blog/ProcessoSeletivoabertura2017.png" alt="Processo seletivo Acens 2017.2">
+                    <div class="cover"><div class="cover-inner"></div></div>
+                  </a> -->
+              </div>
+              <div class="caption text-center">
+                <div class="caption-tag"><i class="fa fa-pencil"></i></div>
+                <a class="title" href="processo-seletivo-2017-2.html"><h5><%= article.title %></h5></a>
+                <p>By <span><a href="#"><%= article.user.name %></a></span></p>
+                <p><%= article.subtitle %></p>
+                <%= link_to "Leia mais!", article_path(article) %>
+              </div>
             </div>
           </div>
-        </div>
+        <% end %>
       <% end %>
     </div>
     <!-- /.owl-carousel -->

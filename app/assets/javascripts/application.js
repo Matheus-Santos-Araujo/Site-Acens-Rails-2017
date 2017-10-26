@@ -21,6 +21,9 @@
 //= require jquery.counterup.min
 //= require typed
 //= require smoothscroll
+//= require theme
+//= require bootstrap-notify
+//= require custom
 //= require rails-ujs
 //= require turbolinks
 //= require ckeditor/init

@@ -21,7 +21,8 @@
   <div class="team">
     <div class="container">
       <div class="row">
-        <% @users.each do |user| %>
+        <% if !@users.blank? %>
+          <% @users.each do |user| %>
           <div class="team-box col-xs-6 col-md-3 wow flipInY" data-wow-delay="0.5s">
             <div class="thumbnail text-center">
               <div class="team-image">
@@ -94,6 +95,7 @@
             </div>
           </div>
           <!-- End team modal-1 -->
+          <% end %>
         <% end %>
 
       </div>
