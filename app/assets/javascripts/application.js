@@ -25,9 +25,10 @@
 //= require bootstrap-notify
 //= require custom
 //= require rails-ujs
-//= require turbolinks
+// require turbolinks //disabled
 //= require ckeditor/init
-//= require_tree .
+// require_tree .
+
 function readURL(input) {
         if (input.files && input.files[0]) {
             var reader = new FileReader();

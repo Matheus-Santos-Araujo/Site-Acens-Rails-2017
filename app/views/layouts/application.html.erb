@@ -35,8 +35,8 @@
       </div> <!-- /.body-container -->
     </div> <!-- /.body -->
     <a href="#" class="scrolltotop"><i class="fa fa-long-arrow-up"></i></a>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <%= render partial: "layouts/notify" %>
 
   </body>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload', 'data-turbolinks-eval': 'false' %>
+  <%= render partial: "layouts/notify" %>
 </html>
