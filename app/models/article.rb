@@ -3,4 +3,7 @@ class Article < ApplicationRecord
   validates_attachment_content_type :photo, content_type: /\Aimage\/.*\z/
   validates_presence_of :title, :subtitle, :photo, :body
   belongs_to :user
+  extend FriendlyId
+  friendly_id :title, use: :slugged
+
 end

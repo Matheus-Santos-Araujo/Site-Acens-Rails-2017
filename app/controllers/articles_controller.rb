@@ -31,7 +31,7 @@ class ArticlesController < ApplicationController
     end
   end
   def show
-    @article = Article.find params[:id]
+    @article = Article.friendly.find(params[:id])
   end
 
   private
