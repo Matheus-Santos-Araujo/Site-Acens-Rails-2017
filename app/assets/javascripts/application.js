@@ -29,6 +29,24 @@
 //= require ckeditor/init
 // require_tree .
 
+function readURLImage(input) {
+
+  if (input.files && input.files[0]) {
+    var reader = new FileReader();
+
+    reader.onload = function(e) {
+      $('.portfolio_preview').attr('src', e.target.result);
+      console.log('imprimindo...');
+    }
+
+    reader.readAsDataURL(input.files[0]);
+  }
+}
+
+$("#portfolio_banner").change(function() {
+  readURLImage(this);
+});
+
 function readURL(input) {
         if (input.files && input.files[0]) {
             var reader = new FileReader();

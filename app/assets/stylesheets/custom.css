@@ -15,3 +15,7 @@
 .recuo {
   text-indent: 4em;
 }
+
+img.portfolio_preview {
+  max-width: 200px;
+}

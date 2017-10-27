@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
   end
   resources :articles
+  resources :portfolios
   root "home#index"
   # error pages
   get "/404", :to => "errors#not_found"
