@@ -1,35 +1,49 @@
+<!-- TODO Consertar espacamento entre divs-->
 <div class="page">
   <div class="more-space-xl"></div>
   <div class="container">
-  	<h2 class="text-center">Notícias</h2>
+    <h2 class="text-center">Notícias</h2>
     <div class="more-space-xl"></div>
 
-    <div id="owl-blog" class="owl-carousel owl-blog">
-      <% unless @articles.blank? %>
+    <% unless @articles.blank? %>
+      <div class="row">
         <% @articles.order('id desc').each do |article| %>
-          <div class="blog-box wow zoomIn" data-wow-delay="0.5s">
-            <div class="thumbnail">
-              <div class="blog-image">
-                <%= link_to article_path(article) do %>
+          <div class="col-md-3">
+            <div class="blog-box wow zoomIn" data-wow-delay="0.5s">
+              <div class="thumbnail">
+                <div class="blog-image">
+                  <%= link_to article_path(article) do %>
                   <%= image_tag article.photo.url(:medium), alt: article.title %>
-                  <div class="cover"><div class="cover-inner"></div></div>
-                <% end %>
+                  <div class="cover">
+                    <div class="cover-inner"></div>
+                  </div>
+                  <% end %>
 
-              </div>
-              <div class="caption text-center">
-                <div class="caption-tag"><i class="fa fa-pencil"></i></div>
-                <a class="title" href="processo-seletivo-2017-2.html"><h5><%= article.title %></h5></a>
-                <p>By <span><a href="#"><%= article.user.name %></a></span></p>
-                <p><%= article.subtitle %></p>
-                <%= link_to "Leia mais!", article_path(article) %>
+                </div>
+                <div class="caption text-center">
+                  <div class="caption-tag">
+                    <i class="fa fa-pencil"></i>
+                  </div>
+                  <a class="title" href="processo-seletivo-2017-2.html">
+                    <h5><%= article.title %></h5>
+                  </a>
+                  <p>By
+                    <span>
+                      <a href="#"><%= article.user.name %></a>
+                    </span>
+                  </p>
+                  <p><%= article.subtitle %></p>
+                  <%= link_to "Leia mais!", article_path(article) %>
+                </div>
               </div>
             </div>
+            <!-- TODO Reposicionar este link -->
+            <% if signed_in? %>
+            <%= link_to "Apagar", article_path(article), method: :delete %>
+            <% end %>
           </div>
-          <!-- TODO Reposicionar este link -->
-          <%= link_to_if signed_in?, "Apagar", article_path(article), method: :delete %>
         <% end %>
-      <% end %>
-    </div>
-    <!-- /.owl-carousel -->
+      </div>
+    <% end %>
   </div>
 </div>

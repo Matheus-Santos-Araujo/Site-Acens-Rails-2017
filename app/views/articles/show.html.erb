@@ -1,11 +1,19 @@
-<div class="page">
-  <div class="container">
-    <div class="more-space-xl"></div>
-  	<h2 class="text-center"><%= @article.title %></h2>
-    <div class="more-space-xl"></div>
-    <%= image_tag @article.photo.url, class: "img-responsive img-center" %>
-    <div class="more-space-xl"></div>
-    <p><%= raw @article.body %></p>
-    <div class="more-space-xl"></div>
+<div class="page article">
+
+  <div class="page-header-wrapper">
+    <div class="container">
+      <div class="page-header text-center wow fadeInUp" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
+          <h1><%= @article.title_a %><span class="text-main"><%= @article.title_b %></span></h1>
+        <div class="divider divider-icon divider-md">//</div>
+        <p class="lead text-gray"><%= @article.subtitle %></p>
+      </div>
+    </div>
   </div>
+
+  <div class="container">
+    <%= image_tag @article.photo.url, class: "img-responsive img-center img-article" %>
+    <div class="more-space-xl"></div>
+    <%= raw @article.body %>
+  </div>
+  <div class="more-space-xxl"></div>
 </div>

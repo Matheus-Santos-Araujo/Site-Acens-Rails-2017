@@ -7,3 +7,11 @@
 .img-center {
   margin: 0 auto;
 }
+
+.post .img-article {
+  max-width: 600px;
+}
+
+.recuo {
+  text-indent: 4em;
+}

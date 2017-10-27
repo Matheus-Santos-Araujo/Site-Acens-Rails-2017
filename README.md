@@ -1,24 +1,47 @@
-# README
+# Acens
+![Acens logo](app/assets/images/acens_logo.png "#goacens")
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Novo site da [acens](http://acens.uece.br), Empresa Junior do curso de ciência
+da computação, Universidade Estadual do Ceará.
 
-Things you may want to cover:
 
-* Ruby version
+As gems foram instaladas:
+* devise
 
-* System dependencies
+* paperclip
 
-* Configuration
+* ckeditor
 
-* Database creation
+* haml
 
-* Database initialization
+* friendly_id
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+## Execução
 
-* Deployment instructions
 
-* ...
+Baixe o código fonte:
+
+```bash
+git clone https://github.com/gleidsonf/acens.git
+```
+
+Entre na pasta:
+```bash
+cd acens
+```
+
+Baixe as dependências:
+```ruby
+bundle install
+```
+
+Crie o banco de dados:
+```ruby
+rake db:migrate
+```
+
+Execute o servidor:
+```ruby
+rails s
+```
