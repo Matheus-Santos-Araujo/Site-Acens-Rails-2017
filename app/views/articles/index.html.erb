@@ -1,7 +1,6 @@
-<!-- TODO Consertar espacamento entre divs-->
 <div class="page">
   <div class="more-space-xl"></div>
-  <div class="container">
+  <div class="container-fluid">
     <h2 class="text-center">Notícias</h2>
     <div class="more-space-xl"></div>
 
@@ -37,7 +36,7 @@
                 </div>
               </div>
             </div>
-            <!-- TODO Reposicionar este link -->
+            <!-- TODO Consertar os botoes de Apagar e Editar(incluir) -->
             <% if signed_in? %>
             <%= link_to "Apagar", article_path(article), method: :delete %>
             <% end %>
