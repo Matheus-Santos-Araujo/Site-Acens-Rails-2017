@@ -25,6 +25,8 @@
               </div>
             </div>
           </div>
+          <!-- TODO Reposicionar este link -->
+          <%= link_to_if signed_in?, "Apagar", article_path(article), method: :delete %>
         <% end %>
       <% end %>
     </div>

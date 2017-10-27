@@ -24,7 +24,8 @@
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right">
           <li class="active"><a class="page-scroll" href="#body-container">Início</a></li>
-          <li><a class="page-scroll" href="#about-section">Como?</a></li>
+          <li><%= link_to "Como?", root_path(anchor: 'about-section'), class: "page-scroll" %>
+            <!-- <a class="page-scroll" href="#about-section">Como?</a></li> -->
           <li><a class="page-scroll" href="#services-section">Serviços</a></li>
           <li><a class="page-scroll" href="#blog">Blog</a></li>
           <li><a class="page-scroll" href="#team-section">Equipe</a></li>
@@ -37,7 +38,6 @@
               <li><%= link_to "Novo Artigo", new_article_url %></li>
               <li><%= link_to "Editar Usuário", edit_user_registration_path %></li>
               <li><a href="video-bg-intro.html">Criar Usuário</a></li>
-              <li><a href="no-scroll-animations.html">No Scroll Animations</a></li>
 	            <li><%= link_to "Sair", destroy_user_session_path, method: :delete %></li>
             </ul>
           </li>

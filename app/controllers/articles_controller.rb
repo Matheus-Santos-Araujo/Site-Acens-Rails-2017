@@ -34,6 +34,12 @@ class ArticlesController < ApplicationController
     @article = Article.friendly.find(params[:id])
   end
 
+  def destroy
+    @article = Article.friendly.find params[:id]
+    @article.destroy
+    redirect_to root_url, notice: "Artigo removido!"
+  end
+
   private
   def article_params
     params.require(:article).permit(:title, :subtitle, :user, :description, :photo, :body, :photo_file_name)
