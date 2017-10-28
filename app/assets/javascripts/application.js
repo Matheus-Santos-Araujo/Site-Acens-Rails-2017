@@ -35,7 +35,7 @@ function readURLImage(input) {
     var reader = new FileReader();
 
     reader.onload = function(e) {
-      $('.portfolio_preview').attr('src', e.target.result);
+      $('.img_preview').attr('src', e.target.result);
       console.log('imprimindo...');
     }
 
@@ -43,7 +43,7 @@ function readURLImage(input) {
   }
 }
 
-$("#portfolio_banner").change(function() {
+$(".img_field").change(function() {
   readURLImage(this);
 });
 
