@@ -26,6 +26,7 @@
 //= require custom
 //= require rails-ujs
 // require turbolinks //disabled
+//= require jquery-ui.min
 //= require ckeditor/init
 // require_tree .
 

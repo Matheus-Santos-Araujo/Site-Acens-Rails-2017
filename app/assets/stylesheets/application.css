@@ -19,6 +19,7 @@
  *= require mobile
  *= require custom
  *= require blue
+ *= require jquery-ui.min
  *= require_tree .
  *= require_self
  */
