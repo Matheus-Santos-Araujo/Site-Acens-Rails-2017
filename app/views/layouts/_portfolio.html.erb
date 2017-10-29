@@ -18,7 +18,9 @@
   <div class="portfolio">
     <div class="container-fluid">
       <div class="row">
-
+        <% @portfolios.each do |portfolio| %>
+          <%= render "layouts/portfolio_item", portfolio: portfolio %>
+        <% end %>
         <!-- Portfolio item-1 -->
         <div class="portfolio-item col-sm-6 col-md-6 col-lg-3 wow flipInX" data-wow-delay="0.2s">
           <a href="#" class="thumbnail" data-toggle="modal" data-target="#portfolioModal-1">

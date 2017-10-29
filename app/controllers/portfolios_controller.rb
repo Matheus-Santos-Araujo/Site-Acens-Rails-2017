@@ -29,6 +29,7 @@ class PortfoliosController < ApplicationController
   def update
     @portfolio = Portfolio.find params[:id]
     if @portfolio.update portfolio_params
+
       redirect_to root_path, notice: "#{@portfolio.title} foi atualizado!"
     else
       render action: :edit
@@ -37,6 +38,7 @@ class PortfoliosController < ApplicationController
 
   def destroy
   end
+
 
   private
 

@@ -29,13 +29,13 @@
 //= require ckeditor/init
 // require_tree .
 
-function readURLImage(input) {
+function readURLImage(preview, input) {
 
   if (input.files && input.files[0]) {
     var reader = new FileReader();
 
     reader.onload = function(e) {
-      $('.img_preview').attr('src', e.target.result);
+      $(preview).attr('src', e.target.result);
       console.log('imprimindo...');
     }
 
@@ -44,7 +44,10 @@ function readURLImage(input) {
 }
 
 $(".img_field").change(function() {
-  readURLImage(this);
+  readURLImage(".img_preview", this);
+});
+$(".screenshots_field").change(function() {
+  readURLImage(".screenshots_preview", this);
 });
 
 function readURL(input) {

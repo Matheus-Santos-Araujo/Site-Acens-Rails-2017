@@ -5,3 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+TypeService.create(name: "Consultoria")
+TypeService.create(name: "Applicativo")
+TypeService.create(name: "Site institucional")
+TypeService.create(name: "Desenvolvimento de sistemas")

@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   resources :portfolios
   root "home#index"
   # error pages
+
+  get "/delete_imagem", :to => "portfolio#delete_picture"
   get "/404", :to => "errors#not_found"
   get "/422", :to => "errors#unacceptable"
   get "/500", :to => "errors#internal_error"
