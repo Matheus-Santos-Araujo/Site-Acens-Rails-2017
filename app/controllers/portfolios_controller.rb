@@ -1,4 +1,5 @@
 class PortfoliosController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :edit, :create, :update, :destroy]
 
   def new
     @portfolio = Portfolio.new
@@ -7,6 +8,13 @@ class PortfoliosController < ApplicationController
   def create
     @portfolio = Portfolio.new portfolio_params
     if @portfolio.save
+      # @portfolio.pictures.create params[:pictures]
+      if params[:images]
+        #===== The magic is here ;)
+        params[:images].each { |image|
+          @portfolio.pictures.create(image: image)
+        }
+      end
       redirect_to root_path, notice: "Portfolio adicionado!"
     else
       render action: :new
@@ -34,6 +42,6 @@ class PortfoliosController < ApplicationController
 
   def portfolio_params
     params.require(:portfolio).permit(:title, :subtitle,
-    :description, :client_name, :banner)
+    :description, :client_name, :banner, :image)
   end
 end

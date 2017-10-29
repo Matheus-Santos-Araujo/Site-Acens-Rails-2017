@@ -33,7 +33,8 @@ gem 'paperclip'
 gem 'ckeditor'
 gem 'devise'
 gem 'haml'
-gem 'friendly_id', '~> 5.1.0' 
+gem 'friendly_id', '~> 5.1.0'
+gem 'carrierwave'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
