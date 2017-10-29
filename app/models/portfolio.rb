@@ -3,5 +3,4 @@ class Portfolio < ApplicationRecord
   validates_attachment_content_type :banner, content_type: /\Aimage\/.*\z/
   validates_presence_of :title, :subtitle, :description, :banner, :client_name
   has_many :pictures, :dependent => :destroy
-  has_one :type_service
 end
