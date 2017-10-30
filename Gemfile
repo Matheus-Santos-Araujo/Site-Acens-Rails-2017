@@ -38,6 +38,7 @@ gem 'friendly_id', '~> 5.1.0'
 # gem 'gibbon'
 # gem 'dotenv-rails', :groups => [:development]
 gem 'gibbon', github: "amro/gibbon"
+gem 'social-share-button'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

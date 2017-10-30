@@ -21,9 +21,22 @@
  *= require blue
  *= require jquery-ui.min
  *= require lobipanel.min
+ *= social-share-button
  *= require_tree .
  *= require_self
  */
+
+ @import "social-share-button";
+
+ $size: 30px;
+
+ .social-share-button {
+    .ssb-icon {
+      background-size: $size $size;
+      height: $size;
+      width: $size;
+    }
+  }
 
  #map {
    width: 100%;
