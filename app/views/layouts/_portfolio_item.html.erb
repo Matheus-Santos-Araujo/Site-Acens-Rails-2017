@@ -29,9 +29,9 @@
                     <div class="col-lg-7">
                       <div class="modal-image">
                         <div class="owl-carousel owl-portfolio-modal">
-                          <%= image_tag "/img/portfolio/jao-1.jpg", alt: "Página inicial." %>
-                          <%= image_tag "/img/portfolio/jao-2.jpg", alt:"Página de certificados." %>
-                          <%= image_tag "/img/portfolio/jao-3.jpg", alt:"Página de galeria de fotos." %>
+                          <% portfolio.pictures.each do |picture| %>
+                            <%= image_tag picture.image.url(:original) %>
+                          <% end %>
                         </div>
                       </div>
                     </div>

@@ -19,3 +19,7 @@
 img.img_preview {
   max-width: 100px;
 }
+
+.article-body {
+  text-align: justify;
+}
