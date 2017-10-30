@@ -25,3 +25,6 @@ public/system/users/pictures/000/000/
 public/system/articles/photos/000/000/
 public/system/portfolios/banners/000/000/
 public/system/pictures/images/000/000
+
+
+config/secrets.yml

@@ -34,6 +34,11 @@ gem 'ckeditor'
 gem 'devise'
 gem 'haml'
 gem 'friendly_id', '~> 5.1.0'
+# gem 'mailchimp-api'
+# gem 'gibbon'
+# gem 'dotenv-rails', :groups => [:development]
+gem 'gibbon', github: "amro/gibbon"
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -43,6 +48,7 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
+  # gem 'dotenv-rails'
 end
 
 group :development do
