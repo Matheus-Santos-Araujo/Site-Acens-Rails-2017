@@ -32,7 +32,6 @@
 //= require ckeditor/init
 // require_tree .
 
-
 function readURLImage(preview, input) {
 
   if (input.files && input.files[0]) {

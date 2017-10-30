@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+
+
   devise_for :users, :skip => [:registrations]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   devise_scope :user do
@@ -10,6 +13,8 @@ Rails.application.routes.draw do
   end
   resources :articles
   resources :portfolios
+  resources :surveys, only: [:new, :create]
+  get "/pesquisa", :to => "surveys#new"
   root "home#index"
   # error pages
 

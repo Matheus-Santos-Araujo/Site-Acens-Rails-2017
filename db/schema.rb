@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171029180131) do
+ActiveRecord::Schema.define(version: 20171030010533) do
 
   create_table "articles", force: :cascade do |t|
     t.string "title"
@@ -73,6 +73,22 @@ ActiveRecord::Schema.define(version: 20171029180131) do
     t.datetime "banner_updated_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "survey_options", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "surveys", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.string "registration"
+    t.integer "survey_option_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["survey_option_id"], name: "index_surveys_on_survey_option_id"
   end
 
   create_table "type_services", force: :cascade do |t|
