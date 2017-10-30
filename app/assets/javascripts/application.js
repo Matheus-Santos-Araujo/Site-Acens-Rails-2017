@@ -10,7 +10,8 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery-1.11.1.min
+//= require jquery.1.11.min
+//= require jquery-ui.min
 //= require bootstrap.min
 //= require owl.carousel.min
 //= require jquery.stellar.min
@@ -26,9 +27,11 @@
 //= require custom
 //= require rails-ujs
 // require turbolinks //disabled
-//= require jquery-ui.min
+//= require lobipanel.min
+//= require survey
 //= require ckeditor/init
 // require_tree .
+
 
 function readURLImage(preview, input) {
 
