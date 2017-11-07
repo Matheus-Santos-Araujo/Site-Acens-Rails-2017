@@ -1,6 +1,10 @@
 class PortfoliosController < ApplicationController
   before_action :authenticate_user!, only: [:new, :edit, :create, :update, :destroy]
 
+  def index
+    @portfolios = Portfolio.all
+  end
+
   def new
     @portfolio = Portfolio.new
   end
@@ -40,6 +44,10 @@ class PortfoliosController < ApplicationController
   end
 
   def destroy
+    @portfolio = Portfolio.find params[:id]
+    if @portfolio.destroy
+      redirect_to root_url, notice: "Item removido!"
+    end
   end
 
 
