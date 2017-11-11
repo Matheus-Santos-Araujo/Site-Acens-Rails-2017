@@ -1,3 +1,16 @@
+<% content_for :head do %>
+    <!-- Open Graph tags -->
+    <meta property="og:title" content="<%= @article.title %>" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="<%= article_url(@article) %>" />
+    <meta property="og:description" content="<%= @article.subtitle %>" />
+      <meta property="og:image" content="<%= @article.photo.url(:original) %>" />
+    <meta property="fb:app_id" content="187676691323618" />
+    <!-- Twitter card property -->
+    <meta name="twitter:card" content="<%= @article.title %>">
+    <meta name="twitter:site" content="@acensjr">
+  <% end %>
+
 <div class="more-space-xl"></div>
 <div class="page article">
   <div class="page-header-wrapper">
@@ -22,12 +35,7 @@
       </div>
       <div class="col-sm-12 col-md-offset-1 col-md-10">
         <div class="pull-right">
-          <%= social_share_button_tag(@article.title) %>
-          <div class="social-share-button">
-            <a class="ssb-icon ssb-facebook" href="https://www.facebook.com/sharer/sharer.php?u=<%= request.original_url %>" target="_blank"></a>
-          </div>
-
-          <%= social_share_button_tag(@article.title, :url => article_url(@article), desc: @article.subtitle)%>
+          <%= social_share_button_tag(@article.title, desc: @article.subtitle)%>
         </div>
         <div class="more-space-xl"></div>
         <div id="disqus_thread"></div>
